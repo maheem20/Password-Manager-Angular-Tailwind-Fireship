@@ -15,6 +15,9 @@ export class SiteListComponent {
     this.passwordManager.addSite(values)
       .then(() => {
         console.log('Site added successfully');
+      })
+      .catch((err: any) => {
+        console.log(err);
       });
   }
 }
