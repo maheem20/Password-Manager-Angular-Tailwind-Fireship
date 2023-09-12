@@ -24,5 +24,7 @@ export class SiteListComponent {
       });
   }
 
-  loadSites() { }
+  loadSites() {
+    this.allSites = this.passwordManagerService.loadSites();
+  }
 }
