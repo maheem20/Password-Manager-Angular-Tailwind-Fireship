@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PasswordManagerService } from '../password-manager.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-site-list',
@@ -7,6 +8,8 @@ import { PasswordManagerService } from '../password-manager.service';
   styleUrls: ['./site-list.component.css']
 })
 export class SiteListComponent {
+
+  allSites!: Observable<Array<any>>;
 
   constructor(private passwordManagerService: PasswordManagerService) { }
 
