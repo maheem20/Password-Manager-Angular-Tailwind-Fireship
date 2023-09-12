@@ -13,5 +13,7 @@ export class PasswordManagerService {
     return addDoc(dbInstance, data);
   }
 
-  loadSites() { }
+  loadSites() {
+    const dbInstance = collection(this.firestore, 'sites');
+  }
 }
