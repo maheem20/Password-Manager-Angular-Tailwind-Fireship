@@ -7,4 +7,6 @@ import { Firestore, collection, addDoc } from '@angular/fire/firestore';
 export class PasswordManagerService {
 
   constructor(private firestore: Firestore) { }
+
+  addSite(data: object) { }
 }
