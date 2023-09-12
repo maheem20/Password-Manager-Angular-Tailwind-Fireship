@@ -8,11 +8,11 @@ import { PasswordManagerService } from '../password-manager.service';
 })
 export class SiteListComponent {
 
-  constructor(private passwordManager: PasswordManagerService) { }
+  constructor(private passwordManagerService: PasswordManagerService) { }
 
   onSubmit(values: object) {
     console.log(values);
-    this.passwordManager.addSite(values)
+    this.passwordManagerService.addSite(values)
       .then(() => {
         console.log('Site added successfully');
       })
