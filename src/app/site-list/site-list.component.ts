@@ -12,5 +12,6 @@ export class SiteListComponent {
 
   onSubmit(values: object) {
     console.log(values);
+    this.passwordManager.addSite(values);
   }
 }
