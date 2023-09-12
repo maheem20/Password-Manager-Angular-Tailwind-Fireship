@@ -8,5 +8,7 @@ export class PasswordManagerService {
 
   constructor(private firestore: Firestore) { }
 
-  addSite(data: object) { }
+  addSite(data: object) {
+    const dbInstance = collection(this.firestore, 'sites');
+  }
 }
