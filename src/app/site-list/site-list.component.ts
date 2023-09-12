@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./site-list.component.css']
 })
 export class SiteListComponent {
-
+  onSubmit(values: object) {
+    console.log(values);
+  }
 }
