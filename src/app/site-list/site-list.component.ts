@@ -23,4 +23,6 @@ export class SiteListComponent {
         console.log(err);
       });
   }
+
+  loadSites() { }
 }
