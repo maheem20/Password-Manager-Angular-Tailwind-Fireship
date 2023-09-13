@@ -11,6 +11,11 @@ export class SiteListComponent {
 
   allSites!: Observable<Array<any>>;
 
+  siteName!: string;
+  siteURL!: string;
+  siteImgURL!: string;
+  siteId!: string;
+
   constructor(private passwordManagerService: PasswordManagerService) { }
 
   onSubmit(values: object) {
