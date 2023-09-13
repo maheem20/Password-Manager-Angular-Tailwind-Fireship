@@ -32,4 +32,11 @@ export class SiteListComponent {
   loadSites() {
     this.allSites = this.passwordManagerService.loadSites();
   }
+
+  editSite(siteName: string, siteURL: string, siteImgURL: string, id: string) {
+    this.siteName = siteName;
+    this.siteURL = siteURL;
+    this.siteImgURL = siteImgURL;
+    this.siteId = id;
+  }
 }
