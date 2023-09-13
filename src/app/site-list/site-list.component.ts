@@ -40,5 +40,7 @@ export class SiteListComponent {
     this.siteURL = siteURL;
     this.siteImgURL = siteImgURL;
     this.siteId = id;
+
+    this.formState = 'Edit';
   }
 }
