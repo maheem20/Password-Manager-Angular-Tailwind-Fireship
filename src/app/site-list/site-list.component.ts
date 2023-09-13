@@ -16,6 +16,8 @@ export class SiteListComponent {
   siteImgURL!: string;
   siteId!: string;
 
+  formState: string = 'Add New'
+
   constructor(private passwordManagerService: PasswordManagerService) { }
 
   onSubmit(values: object) {
