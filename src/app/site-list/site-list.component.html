@@ -47,7 +47,9 @@
                 Add New Password
             </button>
 
-            <button class="my-3 mx-0.5 px-5 py-3 text-sm border-2 border-gray-900 text-gray-900 shadow rounded-md">
+            <button
+            (click)="editSite(site.siteName, site.siteURL, site.siteImgURL, site.id)"
+            class="my-3 mx-0.5 px-5 py-3 text-sm border-2 border-gray-900 text-gray-900 shadow rounded-md">
                 Edit
             </button>
 
