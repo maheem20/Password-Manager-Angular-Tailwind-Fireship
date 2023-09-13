@@ -21,6 +21,25 @@ export class SiteListComponent {
   constructor(private passwordManagerService: PasswordManagerService) { }
 
   onSubmit(values: object) {
+    if (this.formState === 'Add New') {
+      this.passwordManagerService.addSite(values)
+        .then(() => {
+          console.log('Site added successfully');
+        })
+        .catch((err: any) => {
+          console.log(err);
+        });
+    }
+    else if (this.formState === 'Edit') {
+      this.passwordManagerService.updateSite(values, this.siteId)
+        .then(() => {
+          console.log('Site updated successfully');
+        })
+        .catch((err: any) => {
+          console.log(err);
+        });
+    }
+
     console.log(values);
     this.passwordManagerService.addSite(values)
       .then(() => {
