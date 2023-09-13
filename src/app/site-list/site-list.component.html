@@ -12,17 +12,17 @@
         <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
             <div class="flex flex-col">
                 <label class="text-lg font-medium mb-2">Site Name</label>
-                <input ngModel type="text" name="siteName" class="border-2 border-gray-900 p-2 rounded-lg w-full">
+                <input [(ngModel)]="siteName" type="text" name="siteName" class="border-2 border-gray-900 p-2 rounded-lg w-full">
             </div>
 
             <div class="flex flex-col">
                 <label class="text-lg font-medium mb-2">Site URL</label>
-                <input ngModel type="text" name="siteURL" class="border-2 border-gray-900 p-2 rounded-lg w-full">
+                <input [(ngModel)]="siteURL" type="text" name="siteURL" class="border-2 border-gray-900 p-2 rounded-lg w-full">
             </div>
 
             <div class="flex flex-col">
                 <label class="text-lg font-medium mb-2">Site Image URL</label>
-                <input ngModel type="text" name="siteImgURL" class="border-2 border-gray-900 p-2 rounded-lg w-full">
+                <input [(ngModel)]="siteImgURL" type="text" name="siteImgURL" class="border-2 border-gray-900 p-2 rounded-lg w-full">
             </div>
 
             <button class="mt-10 mx-0.5 px-5 py-3 text-sm bg-gray-900 text-white shadow rounded-md">
