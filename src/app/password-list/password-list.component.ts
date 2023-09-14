@@ -8,6 +8,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PasswordListComponent {
 
+  siteId!: string;
+  siteName!: string;
+  siteURL!: string;
+  siteImgURL!: string;
+
   constructor(private route: ActivatedRoute) {
     this.route.queryParams.subscribe((val: any) => {
       console.log(val);
