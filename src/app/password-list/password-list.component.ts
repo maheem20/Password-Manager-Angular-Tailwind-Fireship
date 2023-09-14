@@ -15,7 +15,10 @@ export class PasswordListComponent {
 
   constructor(private route: ActivatedRoute) {
     this.route.queryParams.subscribe((val: any) => {
-      console.log(val);
+      this.siteId = val.id;
+      this.siteName = val.siteName;
+      this.siteURL = val.siteUrl;
+      this.siteImgURL = val.siteImgURL;
     });
   }
 }
