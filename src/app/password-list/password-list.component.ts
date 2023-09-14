@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-password-list',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class PasswordListComponent {
 
+  constructor(private route: ActivatedRoute) {
+    this.route.queryParams.subscribe((val: any) => {
+      console.log(val);
+    });
+  }
 }
