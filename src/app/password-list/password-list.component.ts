@@ -28,5 +28,8 @@ export class PasswordListComponent {
       .then(() => {
         console.log('Password added successfully!');
       })
+      .catch((err: any) => {
+        console.log(err);
+      });
   }
 }
