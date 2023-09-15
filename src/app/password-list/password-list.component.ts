@@ -24,7 +24,7 @@ export class PasswordListComponent {
   }
 
   onSubmit(values: object) {
-    this.passwordManagerService.addPassword(values)
+    this.passwordManagerService.addPassword(values, this.siteId)
       .then(() => {
         console.log('Password added successfully!');
       })
