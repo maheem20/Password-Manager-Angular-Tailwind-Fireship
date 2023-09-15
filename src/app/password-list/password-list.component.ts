@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PasswordManagerService } from '../password-manager.service';
 
 @Component({
   selector: 'app-password-list',
@@ -13,7 +14,7 @@ export class PasswordListComponent {
   siteURL!: string;
   siteImgURL!: string;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private passwordManagerService: PasswordManagerService) {
     this.route.queryParams.subscribe((val: any) => {
       this.siteId = val.id;
       this.siteName = val.siteName;
