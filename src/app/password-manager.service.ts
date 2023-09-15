@@ -31,5 +31,6 @@ export class PasswordManagerService {
   // password queries
   addPassword(data: object) {
     const dbInstance = collection(this.firestore, 'passwords');
+    return addDoc(dbInstance, data);
   }
 }
