@@ -24,6 +24,6 @@ export class PasswordListComponent {
   }
 
   onSubmit(values: object) {
-    console.log(values);
+    this.passwordManagerService.addPassword(values)
   }
 }
