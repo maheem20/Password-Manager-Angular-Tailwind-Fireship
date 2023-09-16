@@ -22,6 +22,8 @@ export class PasswordListComponent {
   password!: string;
   passwordId!: string;
 
+  formState: string = 'Add New';
+
   constructor(private route: ActivatedRoute, private passwordManagerService: PasswordManagerService) {
     this.route.queryParams.subscribe((val: any) => {
       this.siteId = val.id;
