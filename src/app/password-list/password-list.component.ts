@@ -24,6 +24,8 @@ export class PasswordListComponent {
       this.siteURL = val.siteUrl;
       this.siteImgURL = val.siteImgURL;
     });
+
+    this.loadPasswords();
   }
 
   onSubmit(values: object) {
