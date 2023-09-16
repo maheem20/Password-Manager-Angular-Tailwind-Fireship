@@ -40,5 +40,7 @@ export class PasswordManagerService {
   }
 
   updatePassword(siteId: string, passwordId: string, data: object) {
-    const docInstance = doc(this.firestore, `site/${siteId}passwords`, passwordId);}
+    const docInstance = doc(this.firestore, `site/${siteId}passwords`, passwordId);
+    return updateDoc(docInstance, data);
+  }
 }
