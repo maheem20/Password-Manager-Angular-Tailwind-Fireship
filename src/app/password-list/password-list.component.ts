@@ -17,6 +17,11 @@ export class PasswordListComponent {
 
   passwordList!: Observable<Array<any>>;
 
+  email!: string;
+  username!: string;
+  password!: string;
+  passwordId!: string;
+
   constructor(private route: ActivatedRoute, private passwordManagerService: PasswordManagerService) {
     this.route.queryParams.subscribe((val: any) => {
       this.siteId = val.id;
