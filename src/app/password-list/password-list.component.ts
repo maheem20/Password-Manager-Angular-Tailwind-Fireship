@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PasswordManagerService } from '../password-manager.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-password-list',
@@ -13,6 +14,8 @@ export class PasswordListComponent {
   siteName!: string;
   siteURL!: string;
   siteImgURL!: string;
+
+  passwordList!: Observable<Array<any>>;
 
   constructor(private route: ActivatedRoute, private passwordManagerService: PasswordManagerService) {
     this.route.queryParams.subscribe((val: any) => {
