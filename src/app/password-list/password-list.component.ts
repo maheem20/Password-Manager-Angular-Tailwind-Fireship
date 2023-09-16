@@ -54,5 +54,7 @@ export class PasswordListComponent {
     this.username = username;
     this.password = password;
     this.passwordId = passwordId;
+
+    this.formState = 'Edit';
   }
 }
