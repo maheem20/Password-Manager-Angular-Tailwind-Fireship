@@ -46,4 +46,11 @@ export class PasswordListComponent {
   loadPasswords() {
     this.passwordList = this.passwordManagerService.loadPasswords(this.siteId);
   }
+
+  editPassword(email: string, username: string, password: string, passwordId: string) {
+    this.email = email;
+    this.username = username;
+    this.password = password;
+    this.passwordId = passwordId;
+  }
 }
