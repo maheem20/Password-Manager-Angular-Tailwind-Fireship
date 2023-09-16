@@ -48,6 +48,7 @@ export class PasswordListComponent {
       this.passwordManagerService.addPassword(values, this.siteId)
         .then(() => {
           console.log('Password added successfully!');
+          this.resetForm();
         })
         .catch((err: any) => {
           console.log(err);
@@ -57,6 +58,7 @@ export class PasswordListComponent {
       this.passwordManagerService.updatePassword(this.siteId, this.passwordId, values)
         .then(() => {
           console.log('Data updated successfully!');
+          this.resetForm();
         })
         .catch((err: any) => {
           console.log(err);
