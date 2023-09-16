@@ -35,4 +35,8 @@ export class PasswordListComponent {
         console.log(err);
       });
   }
+
+  loadPasswords() {
+    this.passwordList = this.passwordManagerService.loadPasswords(this.siteId);
+  }
 }
