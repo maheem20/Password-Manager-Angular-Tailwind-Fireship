@@ -36,13 +36,24 @@ export class PasswordListComponent {
   }
 
   onSubmit(values: object) {
-    this.passwordManagerService.addPassword(values, this.siteId)
-      .then(() => {
-        console.log('Password added successfully!');
-      })
-      .catch((err: any) => {
-        console.log(err);
-      });
+    if (this.formState === 'Add New') {
+      this.passwordManagerService.addPassword(values, this.siteId)
+        .then(() => {
+          console.log('Password added successfully!');
+        })
+        .catch((err: any) => {
+          console.log(err);
+        });
+    }
+    else if (this.formState === 'Edit') {
+      this.passwordManagerService.updatePassword(this.siteId, this.passwordId, values)
+        .then(() => {
+          console.log('Data updated successfully!');
+        })
+        .catch((err: any) => {
+          console.log(err);
+        });
+    }
   }
 
   loadPasswords() {
