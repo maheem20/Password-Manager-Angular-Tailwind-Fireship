@@ -35,6 +35,14 @@ export class PasswordListComponent {
     this.loadPasswords();
   }
 
+  resetForm() {
+    this.email = '';
+    this.username = '';
+    this.password = '';
+    this.passwordId = '';
+    this.formState = 'Add New';
+  }
+
   onSubmit(values: object) {
     if (this.formState === 'Add New') {
       this.passwordManagerService.addPassword(values, this.siteId)
