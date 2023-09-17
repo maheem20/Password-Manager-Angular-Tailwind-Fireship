@@ -55,7 +55,7 @@ export class PasswordListComponent {
     if (this.formState === 'Add New') {
       this.passwordManagerService.addPassword(values, this.siteId)
         .then(() => {
-          console.log('Password added successfully!');
+          this.showAlert('Data added successfully!');
           this.resetForm();
         })
         .catch((err: any) => {
@@ -65,7 +65,7 @@ export class PasswordListComponent {
     else if (this.formState === 'Edit') {
       this.passwordManagerService.updatePassword(this.siteId, this.passwordId, values)
         .then(() => {
-          console.log('Data updated successfully!');
+          this.showAlert('Data updated successfully!');
           this.resetForm();
         })
         .catch((err: any) => {
@@ -90,7 +90,7 @@ export class PasswordListComponent {
   deletePassword(passwordId: string) {
     this.passwordManagerService.deletePassword(this.siteId, passwordId)
       .then(() => {
-        console.log('Data deleted successfully!');
+        this.showAlert('Data deleted successfully!');
       })
       .catch((err: any) => {
         console.log(err);
