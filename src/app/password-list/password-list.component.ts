@@ -17,7 +17,7 @@ export class PasswordListComponent {
   siteURL!: string;
   siteImgURL!: string;
 
-  passwordList!: Observable<Array<any>>;
+  passwordList!: Array<any>;
 
   email!: string;
   username!: string;
@@ -81,7 +81,9 @@ export class PasswordListComponent {
   }
 
   loadPasswords() {
-    this.passwordList = this.passwordManagerService.loadPasswords(this.siteId);
+    this.passwordManagerService.loadPasswords(this.siteId).subscribe((val: any) => {
+      this.passwordList = val;
+    });
   }
 
   editPassword(email: string, username: string, password: string, passwordId: string) {
