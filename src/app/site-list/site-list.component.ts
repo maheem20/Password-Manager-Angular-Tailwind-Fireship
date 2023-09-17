@@ -21,7 +21,9 @@ export class SiteListComponent {
   isSuccessful: boolean = false;
   successMessage!: string;
 
-  constructor(private passwordManagerService: PasswordManagerService) { }
+  constructor(private passwordManagerService: PasswordManagerService) {
+    this.loadSites();
+  }
 
   showAlert(message: string) {
     this.successMessage = message;
