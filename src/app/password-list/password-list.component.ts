@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PasswordManagerService } from '../password-manager.service';
 import { Observable } from 'rxjs';
+import { PasswordManagerService } from '../password-manager.service';
+
+import { AES, enc } from 'crypto-js';
 
 @Component({
   selector: 'app-password-list',
@@ -95,5 +97,11 @@ export class PasswordListComponent {
       .catch((err: any) => {
         console.log(err);
       });
+  }
+
+  encryptPassword(password: string) {
+    const secretKey = 'C29E2F7EC27AABE1B73BEF928F619';
+    const encryptedPassword = AES.encrypt(password, secretKey).toString();
+    return encryptedPassword;
   }
 }
