@@ -108,4 +108,10 @@ export class PasswordListComponent {
     const encryptedPassword = AES.encrypt(password, secretKey).toString();
     return encryptedPassword;
   }
+
+  decryptPassword(password: string) {
+    const secretKey = 'C29E2F7EC27AABE1B73BEF928F619';
+    const decPassword = AES.decrypt(password, secretKey).toString(enc.Utf8);
+    return decPassword;
+  }
 }
