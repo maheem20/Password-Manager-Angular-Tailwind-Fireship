@@ -114,4 +114,9 @@ export class PasswordListComponent {
     const decPassword = AES.decrypt(password, secretKey).toString(enc.Utf8);
     return decPassword;
   }
+
+  onDecrypt(password: string) {
+    const decPassword = this.decryptPassword(password);
+    console.log(decPassword);
+  }
 }
