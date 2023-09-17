@@ -78,4 +78,14 @@ export class PasswordListComponent {
 
     this.formState = 'Edit';
   }
+
+  deletePassword(passwordId: string) {
+    this.passwordManagerService.deletePassword(this.siteId, passwordId)
+      .then(() => {
+        console.log('Data deleted successfully!');
+      })
+      .catch((err: any) => {
+        console.log(err);
+      });
+  }
 }
