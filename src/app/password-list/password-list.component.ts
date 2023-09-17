@@ -53,7 +53,11 @@ export class PasswordListComponent {
     this.formState = 'Add New';
   }
 
-  onSubmit(values: object) {
+  onSubmit(values: any) {
+
+    const encryptedPassword = this.encryptPassword(values.password);
+    values.password = encryptedPassword;
+
     if (this.formState === 'Add New') {
       this.passwordManagerService.addPassword(values, this.siteId)
         .then(() => {
