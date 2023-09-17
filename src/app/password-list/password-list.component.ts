@@ -117,8 +117,8 @@ export class PasswordListComponent {
     return decPassword;
   }
 
-  onDecrypt(password: string) {
+  onDecrypt(password: string, index: number) {
     const decPassword = this.decryptPassword(password);
-    console.log(decPassword);
+    this.passwordList[index].password = decPassword;
   }
 }
