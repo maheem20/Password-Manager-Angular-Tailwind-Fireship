@@ -24,6 +24,9 @@ export class PasswordListComponent {
 
   formState: string = 'Add New';
 
+  isSuccessful: boolean = false;
+  successMessage!: string;
+
   constructor(private route: ActivatedRoute, private passwordManagerService: PasswordManagerService) {
     this.route.queryParams.subscribe((val: any) => {
       this.siteId = val.id;
@@ -33,6 +36,11 @@ export class PasswordListComponent {
     });
 
     this.loadPasswords();
+  }
+
+  showAlert(message: string) {
+    this.successMessage = message;
+    this.isSuccessful = true;
   }
 
   resetForm() {
