@@ -8,13 +8,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  isError: boolean = false;
+
   constructor(private passwordManagerService: PasswordManagerService, private router: Router) { }
 
   onSubmit(values: any) {
     this.passwordManagerService.login(values.email, values.password).then(() => {
       this.router.navigate(['/site-list']);
     }).catch(err => {
-      console.log(err);
+      this.isError = true;
     });
   }
 }
