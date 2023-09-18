@@ -5,6 +5,11 @@
                 <h1 class="text-2xl font-bold text-gray-900">
                     Log in to your account
                 </h1>
+
+                <div *ngIf="isError" class="p-5 my-3 bg-red-100 text-red-900">
+                    Username or password is incorrect
+                </div>
+
                 <form #f="ngForm" class="space-y-6" (ngSubmit)="onSubmit(f.value)">
                     <div>
                         <label class="block mb-2 text-sm font-medium text-gray-900">
