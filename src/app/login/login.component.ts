@@ -12,7 +12,7 @@ export class LoginComponent {
 
   onSubmit(values: any) {
     this.passwordManagerService.login(values.email, values.password).then(() => {
-      console.log('Login successful');
+      this.router.navigate(['/site-list']);
     }).catch(err => {
       console.log(err);
     });
